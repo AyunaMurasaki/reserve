@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>紫あゆな ライブのご予約</title>
+<meta name="description" content="紫あゆなのライブ・イベントのチケットのご予約を、こちらで承ります。公演日をお選びのうえお申し込みください。折り返しのご連絡で、ご予約の確定となります。">
+<meta property="og:title" content="紫あゆな ライブのご予約">
+<meta property="og:description" content="ライブ・イベントのチケットのご予約を承ります。折り返しのご連絡で、ご予約の確定となります。">
+<meta property="og:image" content="images/hero-sea.jpg">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --sea:#7AA6C6;
+  --sea-deep:#547690;
+  --sky:#C2DCE4;
+  --sand:#EED0C5;
+  --coral:#E79FA0;
+  --sun:#E6C792;
+  --ink:#2B3A44;
+  --ink-soft:#5A6B76;
+  --paper:#FCFBF9;
+  --line:#E4E9EC;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic",Meiryo,system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+a{color:var(--sea-deep)}
+
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  min-height:74vh;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  text-align:center;
+  background:url("images/hero-sea.jpg") center 40%/cover no-repeat;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(255,255,255,.15) 0%,rgba(255,255,255,.55) 55%,rgba(252,251,249,1) 100%);
+}
+.hero-inner{position:relative;z-index:1;padding:0 24px 44px}
+.hero-portrait{
+  width:132px;height:132px;border-radius:50%;
+  object-fit:cover;object-position:center 22%;
+  margin:0 auto 18px;
+  border:5px solid #fff;
+  box-shadow:0 6px 22px rgba(84,118,144,.28);
+}
+.hero h1{
+  margin:0 0 6px;
+  font-size:28px;
+  letter-spacing:.06em;
+  font-weight:700;
+  line-height:1.5;
+}
+.hero .sub{
+  margin:0 0 4px;
+  font-size:15px;
+  color:var(--ink-soft);
+  letter-spacing:.06em;
+}
+.hero .badge{
+  display:inline-block;
+  margin-top:14px;
+  background:var(--coral);
+  color:#fff;
+  font-size:13px;
+  letter-spacing:.1em;
+  padding:5px 16px;
+  border-radius:999px;
+}
+.hero .cta{
+  display:block;
+  margin:20px auto 0;
+  max-width:290px;
+  background:var(--sea-deep);
+  color:#fff;text-decoration:none;
+  font-size:16px;font-weight:700;letter-spacing:.08em;
+  padding:15px 20px;
+  border-radius:11px;
+  box-shadow:0 6px 18px rgba(84,118,144,.3);
+}
+.hero .cta-note{
+  margin:9px 0 0;
+  font-size:12px;
+  color:var(--ink-soft);
+  letter-spacing:.04em;
+}
+
+/* ---------- shared ---------- */
+section{padding:52px 0}
+h2{
+  font-size:21px;
+  margin:0 0 6px;
+  letter-spacing:.06em;
+  font-weight:700;
+}
+.h2-en{
+  display:block;
+  font-size:11px;
+  letter-spacing:.24em;
+  color:var(--sea);
+  font-weight:600;
+  margin-bottom:4px;
+}
+.lead{color:var(--ink-soft);font-size:15px;margin:0 0 26px}
+
+/* ---------- cards ---------- */
+.cards{display:grid;gap:14px}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px 22px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:16px;
+  display:flex;align-items:center;gap:9px;
+}
+.card h3 .n{
+  flex:none;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--sky);color:var(--sea-deep);
+  font-size:12px;font-weight:700;
+  display:grid;place-items:center;
+}
+.card p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+
+.note{
+  margin-top:16px;
+  background:#F4F8FA;
+  border-radius:var(--radius);
+  padding:16px 18px;
+  font-size:13.5px;
+  color:var(--ink-soft);
+}
+.note strong{color:var(--ink)}
+.note a{word-break:break-all}
+
+/* ---------- stage photos ---------- */
+.stage{background:#F7F5F1}
+.stage .shot{border-radius:12px;margin-top:22px}
+.stage .caption{font-size:12.5px;color:var(--ink-soft);margin:10px 0 0;text-align:center}
+.stage .pair{display:grid;gap:18px;margin-top:22px}
+.stage .pair figure{margin:0}
+.stage .pair img{border-radius:12px;width:100%}
+@media (min-width:620px){
+  .stage .pair{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- form ---------- */
+.form-section{background:linear-gradient(180deg,#EAF3F7 0%,#F7FAFB 100%)}
+form{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:26px 22px;
+  border:1px solid var(--line);
+}
+fieldset{border:none;margin:0 0 6px;padding:0}
+legend{
+  font-size:12px;letter-spacing:.14em;font-weight:700;color:var(--sea-deep);
+  background:#EFF5F8;border-radius:999px;padding:5px 14px;margin-bottom:18px;
+}
+.field{margin-bottom:24px}
+label.q,span.q{
+  display:block;
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:3px;
+}
+.req,.opt{
+  font-size:10.5px;
+  padding:2px 7px;
+  border-radius:4px;
+  margin-left:8px;
+  vertical-align:2px;
+  letter-spacing:.06em;
+  font-weight:600;
+}
+.req{background:var(--coral);color:#fff}
+.opt{background:#EDEFF1;color:var(--ink-soft)}
+.help{font-size:12.5px;color:var(--ink-soft);margin:0 0 10px}
+input[type=text],input[type=email],input[type=tel],input[type=date],textarea,select{
+  width:100%;
+  font:inherit;
+  font-size:16px;
+  color:var(--ink);
+  padding:12px 13px;
+  border:1px solid #D3DBE0;
+  border-radius:9px;
+  background:#fff;
+}
+input[type=date]{min-height:50px;-webkit-appearance:none;appearance:none}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus,select:focus{
+  outline:none;border-color:var(--sea);box-shadow:0 0 0 3px rgba(122,166,198,.2);
+}
+.choices{display:grid;gap:8px}
+.choices label{
+  display:flex;align-items:center;gap:10px;
+  border:1px solid #D3DBE0;border-radius:9px;
+  padding:11px 14px;font-size:14.5px;cursor:pointer;
+}
+.choices input{accent-color:var(--sea-deep);flex:none;width:18px;height:18px;margin:0}
+.choices label:has(input:checked){border-color:var(--sea);background:#F2F8FB}
+
+.privacy{
+  background:#F7F5F1;
+  border-radius:11px;
+  padding:16px 17px;
+  font-size:12.5px;
+  line-height:1.85;
+  color:var(--ink-soft);
+  margin-bottom:20px;
+}
+.privacy strong{display:block;color:var(--ink);font-size:13px;margin-bottom:6px}
+
+button[type=submit]{
+  width:100%;
+  font:inherit;font-size:17px;font-weight:700;letter-spacing:.08em;
+  color:#fff;background:var(--sea-deep);
+  border:none;border-radius:11px;
+  padding:17px;
+  cursor:pointer;
+}
+button[type=submit]:disabled{background:#AEBEC8;cursor:default}
+
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.msg{margin-top:16px;font-size:14px;border-radius:10px;padding:14px 16px;display:none}
+.msg.show{display:block}
+.msg.err{background:#FDF0F0;color:#9C4A4A}
+.msg.ok{background:#EEF6F0;color:#3B6B4C}
+
+.done{display:none;text-align:center;padding:14px 0}
+.done h3{font-size:19px;margin:0 0 12px}
+.done p{font-size:14.5px;color:var(--ink-soft);margin:0 0 10px}
+
+/* ---------- footer ---------- */
+footer{background:#2B3A44;color:#D6DEE3;padding:40px 0 34px;text-align:center}
+footer .name{font-size:17px;letter-spacing:.1em;color:#fff;margin:0 0 4px}
+footer .role{font-size:12.5px;margin:0 0 22px;color:#9DB0BC}
+.sns{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.sns a{
+  color:#D6DEE3;text-decoration:none;font-size:13px;letter-spacing:.05em;
+  border:1px solid #47585F;border-radius:999px;padding:8px 17px;
+}
+footer .copy{font-size:11px;color:#7B8C97;margin:0}
+
+@media (min-width:620px){
+  .hero h1{font-size:33px}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img class="hero-portrait" src="images/portrait.jpg" alt="紫あゆな">
+    <h1>紫あゆな<br>ライブのご予約</h1>
+    <p class="sub">ライブ・イベントのチケットのご予約を承ります</p>
+    <span class="badge">折り返しのご連絡で、ご予約確定</span>
+    <a class="cta" href="#reserve">ご予約のお申し込みへ</a>
+    <p class="cta-note">ご質問だけでも承ります</p>
+  </div>
+</header>
+
+<section class="wrap">
+  <span class="h2-en">HOW TO</span>
+  <h2>ご予約の流れ</h2>
+  <p class="lead">お申し込みをいただいてから、3つの流れでご案内します。</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="n">1</span>公演日を選んで、お申し込み</h3>
+      <p>下のフォームで、ご覧になりたい公演の日付をお選びください。公演名や昼・夜の回が分かるときは、補足の欄にお書きいただけると確かです。</p>
+    </div>
+    <div class="card">
+      <h3><span class="n">2</span>折り返し、こちらからご連絡します</h3>
+      <p>お席の状況を確かめて、ご記入のメールアドレスへご連絡します。このご連絡をもって、ご予約の確定となります。</p>
+    </div>
+    <div class="card">
+      <h3><span class="n">3</span>当日、受付でお名前をお伝えください</h3>
+      <p>会場でのご案内は、確定のご連絡と一緒にお送りします。お会いできるのを楽しみにしています。</p>
+    </div>
+  </div>
+
+  <p class="note"><strong>公演の日程は、Instagram・Facebookでご案内しています。</strong>直近の公演の日時は、<a href="https://www.instagram.com/369murasakiayuna/" target="_blank" rel="noopener">Instagram</a> と <a href="https://www.facebook.com/profile.php?id=100011735827150" target="_blank" rel="noopener">Facebook</a> の告知をご覧のうえ、お申し込みください。公式LINEのメニュー「出演・イベント」からもご覧いただけます。</p>
+</section>
+
+<section class="stage">
+  <div class="wrap">
+    <span class="h2-en">STAGE</span>
+    <h2>ステージから</h2>
+    <p class="lead">ホールからライブハウスまで、沖縄を中心に歌っています。</p>
+    <div class="pair">
+      <figure><img src="images/live-house.jpg" alt="ライブハウスで歌う紫あゆな"></figure>
+      <figure><img src="images/live-stage.jpg" alt="ステージで歌う紫あゆな"></figure>
+    </div>
+    <p class="caption">これまでのステージから</p>
+  </div>
+</section>
+
+<section class="form-section" id="reserve">
+  <div class="wrap">
+    <span class="h2-en">RESERVE</span>
+    <h2>ご予約のお申し込み</h2>
+    <p class="lead">下記にご記入のうえ、いちばん下のボタンをお押しください。折り返しこちらからご連絡いたします。</p>
+
+    <form id="applyForm" novalidate>
+      <input type="hidden" name="form" value="reserve">
+
+      <fieldset>
+        <legend>ご覧になりたい公演</legend>
+
+        <div class="field">
+          <label class="q" for="showDate">ご希望の公演日<span class="req">必須</span></label>
+          <p class="help">Instagram・Facebookの告知にある日付をお選びください。</p>
+          <input type="date" id="showDate" name="showDate" required>
+        </div>
+
+        <div class="field">
+          <label class="q" for="showNote">公演名・回など<span class="opt">任意</span></label>
+          <p class="help">公演名や、昼・夜の回のご希望が分かるときにお書きください。</p>
+          <input type="text" id="showNote" name="showNote" placeholder="例）昼の回を希望します">
+        </div>
+
+        <div class="field">
+          <label class="q" for="tickets">ご希望の枚数<span class="req">必須</span></label>
+          <p class="help">6枚以上をご希望のときは「6枚以上」をお選びのうえ、下のご連絡欄に枚数をお書きください。</p>
+          <select id="tickets" name="tickets" required>
+            <option value="">お選びください</option>
+            <option value="1枚">1枚</option>
+            <option value="2枚">2枚</option>
+            <option value="3枚">3枚</option>
+            <option value="4枚">4枚</option>
+            <option value="5枚">5枚</option>
+            <option value="6枚以上">6枚以上</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>ご連絡先</legend>
+
+        <div class="field">
+          <label class="q" for="name">お名前<span class="req">必須</span></label>
+          <p class="help">フルネームでお願いします。当日、受付でお名前を確認します。</p>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label class="q" for="kana">ふりがな<span class="req">必須</span></label>
+          <p class="help">ひらがなでお書きください。</p>
+          <input type="text" id="kana" name="kana" required>
+        </div>
+
+        <div class="field">
+          <label class="q" for="email">メールアドレス<span class="req">必須</span></label>
+          <p class="help">ご予約の確定のご連絡を、こちらへお送りします。</p>
+          <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
+        </div>
+
+        <div class="field">
+          <label class="q" for="tel">お電話番号<span class="opt">任意</span></label>
+          <p class="help">当日のお急ぎのご連絡に使わせていただくことがあります。</p>
+          <input type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>そのほか</legend>
+
+        <div class="field">
+          <span class="q">このページをどちらでご覧になりましたか<span class="req">必須</span></span>
+          <p class="help">ご案内の届け方を整えるための参考にします。</p>
+          <div class="choices">
+            <label><input type="radio" name="source" value="公式LINE" required>公式LINE</label>
+            <label><input type="radio" name="source" value="ホームページ">ホームページ</label>
+            <label><input type="radio" name="source" value="SNS">Instagram・Facebook などのSNS</label>
+            <label><input type="radio" name="source" value="その他">その他・ご紹介</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="q" for="message">ご連絡・ご質問<span class="opt">任意</span></label>
+          <p class="help">お席のご希望、お連れさまのこと、6枚以上の枚数など、何でもお書きください。</p>
+          <textarea id="message" name="message"></textarea>
+        </div>
+      </fieldset>
+
+      <div class="hp" aria-hidden="true">
+        <label>ここは空欄のままにしてください<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <div class="privacy">
+        <strong>ご記入いただく情報の使い道</strong>
+        このフォームでお預かりするお名前・ご連絡先は、紫あゆな（公式LINEアカウントの運営者）がお預かりします。ご予約のご連絡と、ライブ・イベントのご案内にのみ使わせていただき、ほかの目的には使いません。フォームと予約一覧の管理は、公式LINEの構築・保守をお任せしている担当者が、運営の目的の範囲でのみ行います。この担当者を除き、第三者へお渡しすることはありません。お預かりした内容は Google のサービス上に保管しています。お申し込みの取り消し、ご記入内容の確認・訂正をご希望のときは、公式LINEの「お問い合わせ」からお知らせください。
+      </div>
+
+      <button type="submit" id="submitBtn">この内容で申し込む</button>
+      <div class="msg" id="msg"></div>
+    </form>
+
+    <div class="done" id="done">
+      <h3>お申し込みありがとうございました</h3>
+      <p>ご予約のお申し込みをお預かりしました。ご記入のメールアドレスへ、確認のご連絡をお送りしています。</p>
+      <p>お席の状況を確かめて、あらためてこちらからご連絡いたします。そのご連絡をもって、ご予約の確定となります。数日お時間をいただくことがありますので、お待ちいただけましたら幸いです。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="name">紫あゆな</p>
+  <p class="role">Ayuna Murasaki</p>
+  <div class="sns">
+    <a href="https://lin.ee/VMailZP" target="_blank" rel="noopener">公式LINE</a>
+    <a href="https://ayunamurasaki.github.io/fanclub/" target="_blank" rel="noopener">ファンクラブ</a>
+    <a href="https://www.instagram.com/369murasakiayuna/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=100011735827150" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.youtube.com/@%E7%B4%AB%E3%81%82%E3%82%86%E3%81%AA" target="_blank" rel="noopener">YouTube</a>
+  </div>
+  <p class="copy">&copy; 紫あゆな</p>
+</footer>
+
+<script>
+/* ==================================================================
+   送信先（Google Apps Script のウェブアプリURL）
+   ファンクラブ・英語教室のLPと同じ1本のURLを使う。どちらの受け口へ渡すかは、
+   このフォームが送る form=reserve で GAS 側が振り分ける（28_ の §ライブ予約）。
+
+   ⚠ 順番がある。GAS を「デプロイを管理 → 鉛筆 → 新バージョン」で入れ替えて、
+   §ライブ予約 が本番に載ってから、このページを公開する。
+   古いバージョンのままだと reserve の振り分けが無く、
+   ファンクラブの名簿へ中身の欠けた行が入ってしまう。
+
+   空のあいだは送信せず「準備中」の案内を出す（プレースホルダを世に出さないため）。
+   ================================================================== */
+var GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzU6W5h_qumfFetUk39fFSXhtHMdVGFfwA5wbZMCIYysczN7iP7ua1I94_9-havf5g/exec";
+
+(function () {
+  var form = document.getElementById("applyForm");
+  var btn = document.getElementById("submitBtn");
+  var msg = document.getElementById("msg");
+  var done = document.getElementById("done");
+  var el = function (n) { return form.elements[n]; };
+
+  /* 流入元の初期選択: リッチメニューからは ?from=line で開く */
+  var from = new URLSearchParams(location.search).get("from");
+  var map = { line: "公式LINE", hp: "ホームページ", sns: "SNS" };
+  if (map[from]) {
+    var pre = form.querySelector('input[name="source"][value="' + map[from] + '"]');
+    if (pre) pre.checked = true;
+  }
+
+  /* 過ぎた日付を選べないようにする（今日から） */
+  (function () {
+    var d = new Date();
+    var iso = d.getFullYear() + "-" +
+      ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
+      ("0" + d.getDate()).slice(-2);
+    el("showDate").min = iso;
+  })();
+
+  function show(text, kind) {
+    msg.textContent = text;
+    msg.className = "msg show " + kind;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    msg.className = "msg";
+
+    if (el("website").value) return;           // ボット除け（人には見えない欄）
+
+    var required = [
+      ["showDate", "ご希望の公演日をお選びください。"],
+      ["tickets", "ご希望の枚数をお選びください。"],
+      ["name", "お名前をご記入ください。"],
+      ["kana", "ふりがなをご記入ください。"],
+      ["email", "メールアドレスをご記入ください。"]
+    ];
+    for (var i = 0; i < required.length; i++) {
+      var f = el(required[i][0]);
+      if (!f.value.trim()) {
+        show(required[i][1], "err");
+        f.focus();
+        return;
+      }
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el("email").value.trim())) {
+      show("メールアドレスの形をご確認ください。", "err");
+      el("email").focus();
+      return;
+    }
+    var radios = ["source"];
+    var labels = { source: "このページをどちらでご覧になりましたか" };
+    for (var j = 0; j < radios.length; j++) {
+      if (!form.querySelector('input[name="' + radios[j] + '"]:checked')) {
+        show(labels[radios[j]] + "をお選びください。", "err");
+        return;
+      }
+    }
+
+    if (!GAS_ENDPOINT) {
+      show("ただいま受付の準備を進めています。まもなく開始しますので、少しお待ちください。", "err");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "送信しています…";
+
+    /* Apps Script が確実に読める形（application/x-www-form-urlencoded）で送る。
+       独自のヘッダを付けないので、送信前の問い合わせ通信（preflight）が起きない。
+       submittedAt は押すたびに1つだけ作る。下の送り直しでも同じ値を使うので、
+       受け側は同じお申し込みだと分かり、名簿が2行に増えない。 */
+    var data = new URLSearchParams(new FormData(form));
+    data.append("submittedAt", new Date().toISOString());
+
+    function succeeded() {
+      form.style.display = "none";
+      done.style.display = "block";
+      done.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    function failed() {
+      btn.disabled = false;
+      btn.textContent = "この内容で申し込む";
+      show("送信できませんでした。通信の状態をご確認のうえ、もう一度お試しください。", "err");
+    }
+
+    fetch(GAS_ENDPOINT, { method: "POST", body: data })
+      .then(succeeded)
+      .catch(function () {
+        /* 送信は届いたのに、別ドメインの決まりでお返事だけ読めないことがある。
+           その場合にここへ来るので、お返事を読まない形でもう一度だけ送る。 */
+        fetch(GAS_ENDPOINT, { method: "POST", mode: "no-cors", body: data })
+          .then(succeeded)
+          .catch(failed);
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
